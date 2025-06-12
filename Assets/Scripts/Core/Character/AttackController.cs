@@ -15,6 +15,7 @@ namespace Core.Character
     [SerializeField] private float _attackRange = 3f;
     [SerializeField] private float _attackForce = 300f;
 
+    private Collider[] _results = new Collider[MaxAttackTargets];
     private void OnEnable()
     {
       _inputController.EventCast += Attack;
@@ -32,16 +33,14 @@ namespace Core.Character
 
     private void OnAttack() //Called from Animation
     {
-      var results = new Collider[MaxAttackTargets];
-
       var attackPosition = transform.position + transform.forward * 0.5f * _attackRange;
-      var size = Physics.OverlapSphereNonAlloc(attackPosition, _attackRange, results, _targetLayerMask);
+      var size = Physics.OverlapSphereNonAlloc(attackPosition, _attackRange, _results, _targetLayerMask);
       if (size == 0)
         return;
 
       for (int i = 0; i < size; i++)
       {
-        var hitCollider = results[i];
+        var hitCollider = _results[i];
 
         if (hitCollider.TryGetComponent(out Enemy enemy))
         {

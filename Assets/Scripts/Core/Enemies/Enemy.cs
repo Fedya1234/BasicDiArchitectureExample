@@ -1,4 +1,5 @@
 using System.Collections;
+using Core.Character;
 using Core.Scores;
 using Effects;
 using GameSetup;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 namespace Core.Enemies
 {
-  public class Enemy : MonoBehaviour
+  public class Enemy : MonoBehaviour, IAttackable
   {
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private EffectTypeId _deathEffectTypeId;

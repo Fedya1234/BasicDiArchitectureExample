@@ -12,7 +12,7 @@ namespace QuestSystem.QuestTypes
         private CurrencyManager _currencyManager;
         protected override void OnInitialized()
         {
-            _currencyManager = GameManager.Get<CurrencyManager>();
+            _currencyManager = FContainer.Get<CurrencyManager>();
         }
 
         public override void AddListener()

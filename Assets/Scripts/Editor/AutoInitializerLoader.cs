@@ -13,7 +13,7 @@ public static class AutoInitializerLoader
     Scene currentScene = SceneManager.GetActiveScene();
     if (currentScene.IsValid() && (currentScene.buildIndex != 0 || SceneManager.sceneCountInBuildSettings == 1))
     {
-      GameManager dataManager = Object.FindFirstObjectByType<GameManager>();
+      FContainer dataManager = Object.FindFirstObjectByType<FContainer>();
       if (dataManager == null)
       {
         var dataManagerPrefab = GetAsset<GameObject>("GameManager");

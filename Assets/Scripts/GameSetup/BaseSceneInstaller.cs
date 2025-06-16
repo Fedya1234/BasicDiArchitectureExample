@@ -15,7 +15,7 @@ namespace GameSetup
 
     private void OnDestroy()
     {
-      GameManager.ClearSceneContainer();
+      FContainer.ClearSceneContainer();
     }
   }
 }

@@ -5,11 +5,10 @@ using Data.Saves;
 using Managers;
 using Tools;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace GameSetup
 {
-  public class GameManager : StaticBehaviour<GameManager>
+  public class FContainer : StaticBehaviour<FContainer>
   {
     [SerializeField] private SaveData _saveData;
     [SerializeField] private GradeStaticData _gradeStaticData;

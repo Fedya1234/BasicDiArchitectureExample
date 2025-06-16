@@ -18,7 +18,7 @@ namespace UI.GameplayUI
 
     private void Awake()
     {
-      _currencyManager = GameManager.Get<CurrencyManager>();
+      _currencyManager = FContainer.Get<CurrencyManager>();
     }
 
     private void OnEnable()

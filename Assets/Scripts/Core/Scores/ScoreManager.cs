@@ -22,9 +22,9 @@ namespace Core.Scores
     private SaveManager _saveManager;
     private void Awake()
     {
-      _coreUIView = GameManager.Get<CoreUIView>();
-      _currencyManager = GameManager.Get<CurrencyManager>();
-      _saveManager = GameManager.Get<SaveManager>();
+      _coreUIView = FContainer.Get<CoreUIView>();
+      _currencyManager = FContainer.Get<CurrencyManager>();
+      _saveManager = FContainer.Get<SaveManager>();
       _score = 0;
     }
 

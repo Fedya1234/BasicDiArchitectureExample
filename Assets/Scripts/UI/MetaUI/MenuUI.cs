@@ -22,8 +22,8 @@ namespace UI.GameplayUI
 
     private void Awake()
     {
-      _currencyManager = GameManager.Get<CurrencyManager>();
-      _gradeManager = GameManager.Get<GradeManager>();
+      _currencyManager = FContainer.Get<CurrencyManager>();
+      _gradeManager = FContainer.Get<GradeManager>();
     }
 
     private void OnEnable()

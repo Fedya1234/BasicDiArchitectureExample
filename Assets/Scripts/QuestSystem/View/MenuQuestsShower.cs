@@ -19,7 +19,7 @@ namespace QuestSystem.View
 
     private void Awake()
     {
-      _questsManager = GameManager.Get<QuestsManager>();
+      _questsManager = FContainer.Get<QuestsManager>();
     }
 
     private void Start()

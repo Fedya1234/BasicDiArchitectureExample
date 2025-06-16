@@ -15,10 +15,12 @@ namespace Core.Enemies
     [SerializeField] private float _deathDelay = 0.3f;
 
     private ScoreManager _scoreManager;
+    private EffectsManager _effectsManager;
     
     private void Awake()
     {
-      _scoreManager = GameManager.Get<ScoreManager>();
+      _scoreManager = FContainer.Get<ScoreManager>();
+      _effectsManager = FContainer.Get<EffectsManager>();
       
       if (_rigidbody == null)
       {
@@ -51,7 +53,7 @@ namespace Core.Enemies
       yield return new WaitForSeconds(delay);
       
       if (_deathEffectTypeId != EffectTypeId.None)
-        EffectsManager.Create(_deathEffectTypeId, transform.position, transform.forward);
+        _effectsManager.Create(_deathEffectTypeId, transform.position, transform.forward);
       
       _scoreManager.AddScore(_scoreValue);
       

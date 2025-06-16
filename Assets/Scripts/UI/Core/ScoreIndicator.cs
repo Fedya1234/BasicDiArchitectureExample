@@ -12,7 +12,7 @@ namespace UI.Core
     private ScoreManager _scoreManager;
     private void Awake()
     {
-      _scoreManager = GameManager.Get<ScoreManager>();
+      _scoreManager = FContainer.Get<ScoreManager>();
     }
     
     private void OnEnable()

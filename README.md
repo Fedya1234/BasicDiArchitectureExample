@@ -1,12 +1,11 @@
 # Unity Game Project
 
-This is a Unity-based game project featuring modular game management, data-driven saves, and a flexible dependency injection system.
+This is a Unity-based architecture template featuring modular game management, data-driven saves, and a flexible dependency injection system.
 
 ## Features
 
-- **GameManager**: Centralized singleton for global and scene-specific services.
+- **FContainer**: DI Container for global and scene-specific services. Scene installers for modular service registration.
 - **Save System**: ScriptableObject-based persistent data for currencies and grades.
-- **Dependency Injection**: Scene installers for modular service registration.
 
 Dependencies: 
 - DOTween

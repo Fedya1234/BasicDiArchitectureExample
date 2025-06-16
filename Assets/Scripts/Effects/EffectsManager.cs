@@ -6,7 +6,7 @@ using UniversalPool;
 
 namespace Effects
 {
-  public class EffectsManager : StaticBehaviour<EffectsManager>
+  public class EffectsManager : MonoBehaviour
   {
     [SerializeField] private EffectsLibrary _effectsLibrary;
     [SerializeField] private bool _initializeOnStart = true;
@@ -27,13 +27,8 @@ namespace Effects
           InitializePools();
       }
     }
-    public static ParticleSystemPoolObject Create(EffectTypeId typeId, Vector3 position, Vector3? direction = null,
-      Transform parent = null, float scale = 1f)
-    {
-      return Instance.CreateInstance(typeId, position, direction, parent, scale);
-    }
 
-    public ParticleSystemPoolObject CreateInstance(EffectTypeId typeId, Vector3 position, Vector3? direction = null,
+    public ParticleSystemPoolObject Create(EffectTypeId typeId, Vector3 position, Vector3? direction = null,
       Transform parent = null, float scale = 1f)
     {
       var effectData = PoolObjectByTypeId(typeId);

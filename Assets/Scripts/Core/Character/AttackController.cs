@@ -23,7 +23,7 @@ namespace Core.Character
 
     private void OnDisable()
     {
-      _inputController.EventCast += Attack;
+      _inputController.EventCast -= Attack;
     }
 
     private void Attack()
@@ -42,7 +42,7 @@ namespace Core.Character
       {
         var hitCollider = _results[i];
 
-        if (hitCollider.TryGetComponent(out Enemy enemy))
+        if (hitCollider.TryGetComponent(out IAttackable enemy))
         {
           var toTarget = hitCollider.transform.position - transform.position;
           var distance = toTarget.magnitude;

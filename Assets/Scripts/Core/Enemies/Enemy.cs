@@ -53,7 +53,7 @@ namespace Core.Enemies
       yield return new WaitForSeconds(delay);
       
       if (_deathEffectTypeId != EffectTypeId.None)
-        _effectsManager.Create(_deathEffectTypeId, transform.position, transform.forward);
+        _effectsManager.Create(_deathEffectTypeId, transform.position);
       
       _scoreManager.AddScore(_scoreValue);
       

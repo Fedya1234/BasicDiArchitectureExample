@@ -15,7 +15,7 @@ namespace Core.Character
     [SerializeField] private float _attackRange = 3f;
     [SerializeField] private float _attackForce = 300f;
 
-    private Collider[] _results = new Collider[MaxAttackTargets];
+    private readonly Collider[] _results = new Collider[MaxAttackTargets];
     private void OnEnable()
     {
       _inputController.EventCast += Attack;
